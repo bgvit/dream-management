@@ -43,6 +43,7 @@ dependencyManagement {
 	imports {
 		mavenBom("org.springframework.boot:spring-boot-dependencies:$springBootStarterVersion")
 		mavenBom("org.springframework.boot:spring-boot-starter-parent:$springBootStarterVersion")
+		mavenBom("com.fasterxml.jackson:jackson-bom:$jacksonVersion")
 	}
 	dependencies {
 		dependency("org.jetbrains.kotlinx:kotlinx-coroutines-jdk8:$kotlinxCoroutinesVersion")
@@ -64,6 +65,7 @@ configurations.runtimeClasspath.get().extendsFrom(developmentOnly)
 
 dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-webflux")
+	implementation("org.springframework.boot:spring-boot-starter-actuator")
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 	implementation("io.projectreactor.kotlin:reactor-kotlin-extensions")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
